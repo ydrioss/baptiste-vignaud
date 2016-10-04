@@ -1,3 +1,7 @@
+yd_portfolio:
+    resource: "@YDPortfolioBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

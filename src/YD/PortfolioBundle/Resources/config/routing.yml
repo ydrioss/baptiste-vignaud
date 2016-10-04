@@ -1,0 +1,3 @@
+yd_portfolio_homepage:
+    path:     /
+    defaults: { _controller: YDPortfolioBundle:Portfolio:index }
