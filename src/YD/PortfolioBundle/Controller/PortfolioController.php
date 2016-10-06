@@ -10,4 +10,11 @@ class PortfolioController extends Controller
     {
         return $this->render('YDPortfolioBundle:Portfolio:index.html.twig');
     }
+
+    public function workAction($id)
+    {
+        return $this->render('YDPortfolioBundle:Portfolio:work.html.twig', array(
+          'id' => $id
+        ));
+    }
 }

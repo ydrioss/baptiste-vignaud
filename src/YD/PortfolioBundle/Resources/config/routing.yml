@@ -1,3 +1,7 @@
 yd_portfolio_homepage:
     path:     /
     defaults: { _controller: YDPortfolioBundle:Portfolio:index }
+
+yd_portfolio_work:
+    path:     /work/{id}
+    defaults: { _controller: YDPortfolioBundle:Portfolio:work}
