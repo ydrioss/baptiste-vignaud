@@ -1,3 +1,7 @@
+yd_core:
+    resource: "@YDCoreBundle/Resources/config/routing.yml"
+    prefix: /
+
 yd_portfolio:
     resource: "@YDPortfolioBundle/Resources/config/routing.yml"
     prefix:   /
