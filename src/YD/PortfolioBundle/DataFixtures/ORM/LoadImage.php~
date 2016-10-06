@@ -1,0 +1,32 @@
+<?php
+
+namespace YD\PortfolioBundle\DataFixtures\ORM;
+
+use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
+use YD\PortfolioBundle\Entity\Image;
+
+class LoadImage implements FixtureInterface
+{
+  public function load(ObjectManager $manager)
+  {
+    $urlBase = "http://baptiste-vignaud.fr/images/work/";
+
+    $urls = array(
+      'bobard.png',
+      'firefly.png',
+      'tables.png',
+      '23hbd.png',
+      'monsieurpaul.png'
+    );
+
+    foreach ($urls as $url) {
+      $image = new Image();
+      $image->setUrl($urlBase . $url);
+
+      $manager->persist($image);
+    }
+
+    $manager->flush();
+  }
+}

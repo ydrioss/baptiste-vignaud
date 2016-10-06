@@ -58,7 +58,8 @@ class Work
     /**
      * @var int
      *
-     * @ORM\Column(name="display_order", type="integer", unique=true)
+     * @ORM\Column(name="display_order", type="integer", nullable=true)
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $displayOrder;
 
