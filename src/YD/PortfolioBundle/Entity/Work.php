@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Work
 {
     /**
+     * @ORM\OneToOne(targetEntity="YD\PortfolioBundle\Entity\Image", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+    */
+    private $image;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -27,6 +33,13 @@ class Work
      * @ORM\Column(name="title", type="string", length=255, unique=true)
      */
     private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=255, unique=false)
+     */
+    private $category;
 
     /**
      * @var string
@@ -154,5 +167,53 @@ class Work
     public function getDisplayOrder()
     {
         return $this->displayOrder;
+    }
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Work
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \YD\PortfolioBundle\Entity\Image $image
+     *
+     * @return Work
+     */
+    public function setImage(\YD\PortfolioBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \YD\PortfolioBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
