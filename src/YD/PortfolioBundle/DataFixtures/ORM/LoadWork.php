@@ -17,7 +17,7 @@ class LoadWork implements FixtureInterface
       'bobard.png',
       'firefly.png',
       'tables.png',
-      '23hbd.png',
+      '23hbd.jpg',
       'monsieurpaul.png'
     );
 
