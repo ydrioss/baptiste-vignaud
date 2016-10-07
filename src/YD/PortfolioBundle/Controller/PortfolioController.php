@@ -5,6 +5,8 @@ namespace YD\PortfolioBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+use YD\PortfolioBundle\Entity\Work;
+
 class PortfolioController extends Controller
 {
     public function indexAction()
@@ -22,16 +24,8 @@ class PortfolioController extends Controller
         ));
     }
 
-    public function workAction($id)
+    public function workAction(Work $work)
     {
-        $em = $this->getDoctrine()->getManager();
-        $work = $em->getRepository('YDPortfolioBundle:Work')->find($id);
-
-        if (null === $work) {
-          throw new NotFoundHttpException("Le projet" . $id . "n'existe pas");
-
-        }
-
         return $this->render('YDPortfolioBundle:Portfolio:work.html.twig', array(
           'work' => $work
         ));

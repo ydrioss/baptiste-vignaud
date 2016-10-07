@@ -3,6 +3,7 @@
 namespace YD\PortfolioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Work
@@ -62,6 +63,12 @@ class Work
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $displayOrder;
+
+    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     */
+    private $slug;
 
 
     /**
@@ -216,5 +223,29 @@ class Work
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Work
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

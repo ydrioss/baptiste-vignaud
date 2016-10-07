@@ -6,7 +6,7 @@
   <div class="row">
     {% for work in listWorks %}
       <div class="col-md-3 col-sm-6">
-        <a href="work/{{ work.id}}">
+        <a href="work/{{ work.slug}}">
           <div class="work" style="height: 200px; overflow: hidden; position: relative;">
             <img alt="" src="{{ work.image.url}}">
             <span class=""></span>
