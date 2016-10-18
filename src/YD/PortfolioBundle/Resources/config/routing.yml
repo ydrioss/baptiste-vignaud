@@ -5,3 +5,8 @@ yd_portfolio_homepage:
 yd_portfolio_work:
     path:     /work/{slug}
     defaults: { _controller: YDPortfolioBundle:Portfolio:work}
+
+yd_portfolio_add:
+    path: /add
+    defaults:
+        _controller: YDPortfolioBundle:Portfolio:add
