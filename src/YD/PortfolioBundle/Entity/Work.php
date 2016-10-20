@@ -14,7 +14,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class Work
 {
     /**
-     * @ORM\OneToOne(targetEntity="YD\PortfolioBundle\Entity\Image", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="YD\PortfolioBundle\Entity\Image", cascade={"remove", "persist"})
      * @ORM\JoinColumn(nullable=false)
     */
     private $image;

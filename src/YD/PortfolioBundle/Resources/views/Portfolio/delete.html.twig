@@ -1,0 +1,18 @@
+{% extends "YDCoreBundle:Core:layout.html.twig" %}
+
+{% block title %}Supprimer un projet{% endblock %}
+
+{% block body %}
+  <h2>Supprimer un projet</h2>
+
+  <p>Êtes-vous absolument sûr et certain de vouloir supprimer ce projet ?</p>
+
+  <form action="{{ path('yd_portfolio_delete', {'id': work.id}) }}" method="post">
+    <a href="{{ path('yd_portfolio_work', {'slug': work.slug}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour au projet
+    </a>
+    <input type="submit" value="Supprimer" class="btn btn-danger">
+    {{ form_rest(form) }}
+  </form>
+{% endblock %}

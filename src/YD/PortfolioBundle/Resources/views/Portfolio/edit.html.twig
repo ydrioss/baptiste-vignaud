@@ -1,0 +1,18 @@
+{% extends 'YDCoreBundle:Core:layout.html.twig' %}
+
+{% block title %}Modifier un projet{% endblock %}
+
+{% block body %}
+  <h2>Modifier un projet</h2>
+
+  {{ include("YDPortfolioBundle:Portfolio:form.html.twig") }}
+
+  <p>Vous éditez un projet déjà existant, gare à ne pas changer l'esprit général</p>
+
+  <p>
+    <a href="{{ path(yd_portfolio_work, {'id': work.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour au projet
+    </a>
+  </p>
+{% endblock %}

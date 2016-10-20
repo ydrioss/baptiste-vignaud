@@ -7,6 +7,16 @@ yd_portfolio_work:
     defaults: { _controller: YDPortfolioBundle:Portfolio:work}
 
 yd_portfolio_add:
-    path: /add
+    path: /admin/add
     defaults:
         _controller: YDPortfolioBundle:Portfolio:add
+
+yd_portfolio_edit:
+    path: /admin/edit/{id}
+    defaults:
+        _controller: YDPortfolioBundle:Portfolio:edit
+
+yd_portfolio_delete:
+    path: /admin/delete/{id}
+    defaults:
+      _controller: YDPortfolioBundle:Portfolio:delete
