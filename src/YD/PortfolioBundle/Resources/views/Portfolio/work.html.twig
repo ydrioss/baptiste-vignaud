@@ -9,7 +9,7 @@
       <a href="{{ work.link }}">
         <img
           alt="{{ work.image.alt }}"
-          src="{{ asset(work.image.webPath) }}"
+          src="{{ asset((work.image.webPath) | imagine_filter('work_view')) }}"
         >
       </a>
     </div>

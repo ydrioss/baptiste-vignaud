@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new YD\PortfolioBundle\YDPortfolioBundle(),
             new YD\CoreBundle\YDCoreBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
