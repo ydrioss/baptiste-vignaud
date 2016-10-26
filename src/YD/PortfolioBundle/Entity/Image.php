@@ -104,6 +104,9 @@ class Image
      */
     public function preUpload()
     {
+      if (null === $this->file) {
+        return;
+      }
       $this->url = $this->file->guessExtension();
     }
 
@@ -113,6 +116,9 @@ class Image
      */
     public function upload()
     {
+      if (null === $this->file) {
+        return;
+      }
       //Si on avait un ancien fichier, on le supprime
       if (null !== $this->tempFileName) {
         $oldfile = $this->getUploadRootDir().'/'.$this->id.'.'.$this->tempFileName;

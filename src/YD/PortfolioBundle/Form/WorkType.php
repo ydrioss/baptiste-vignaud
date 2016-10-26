@@ -5,7 +5,6 @@ namespace YD\PortfolioBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -25,8 +24,6 @@ class WorkType extends AbstractType
             ->add('content',      TextareaType::class)
             ->add('link',         TextType::class)
             ->add('displayOrder', IntegerType::class, array('required' => false))
-            ->add('image',        ImageType::class)
-            ->add('save',         SubmitType::class)
         ;
     }
 

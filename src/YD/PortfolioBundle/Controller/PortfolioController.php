@@ -7,7 +7,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
 
 use YD\PortfolioBundle\Entity\Work;
-use YD\PortfolioBundle\Form\WorkType;
+use YD\PortfolioBundle\Form\WorkAddType;
+use YD\PortfolioBundle\Form\WorkEditType;
 
 class PortfolioController extends Controller
 {
@@ -36,7 +37,7 @@ class PortfolioController extends Controller
     public function addAction(Request $request)
     {
       $work = new Work();
-      $form = $this->get('form.factory')->create(WorkType::class, $work);
+      $form = $this->get('form.factory')->create(WorkAddType::class, $work);
 
       if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
         $em = $this->getDoctrine()->getManager();
@@ -59,10 +60,10 @@ class PortfolioController extends Controller
 
       $work = $em->getRepository('YDPortfolioBundle:Work')->find($id);
       if (null === $work) {
-        throw new NotFoundHttpException("Le projet d'id" .$id. "n'existe pas.");
+        throw new NotFoundHttpException("Le projet d'id " .$id. " n'existe pas.");
       }
 
-      $form = $this->get('form.factory')->create(WorkType::class, $work);
+      $form = $this->get('form.factory')->create(WorkEditType::class, $work);
 
       if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
         $em->flush();
@@ -70,14 +71,14 @@ class PortfolioController extends Controller
         $request->getSession()->getFlashBag()->add('notice', 'Projet bien modifié.');
 
         return $this->redirectToRoute('yd_portfolio_work', array(
-          'id' => $work->getId()
+          'slug' => $work->getSlug()
         ));
+      }
 
         return $this->render('YDPortfolioBundle:Portfolio:edit.html.twig', array(
           'work'  => $work,
           'form'  => $form->createView(),
         ));
-      }
     }
 
     public function deleteAction(Request $request, $id)
@@ -86,7 +87,7 @@ class PortfolioController extends Controller
       $work = $em->getRepository('YDPortfolioBundle:Work')->find($id);
 
       if (null === $work) {
-        throw new NotFoundHttpException("Le projet d'id" .$id. "n'existe pas.");
+        throw new NotFoundHttpException("Le projet d'id " .$id. " n'existe pas.");
       }
 
       $form = $this->get('form.factory')->create();
