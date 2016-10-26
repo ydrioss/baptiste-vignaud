@@ -1,0 +1,311 @@
+/** Caler footer en bas de page **/
+	html,body,#wrap {
+		height: 100%;
+	}
+
+	body > #wrap {
+		height: auto; min-height: 100%;
+	}
+
+	#main {
+		overflow: auto;
+		padding-bottom: 100px; /* footer height */
+	}
+
+body {
+	font-family: arial, verdana, sans-serif;
+	background: #fff;
+}
+
+.red {
+	color:#bb5234;
+	font-weight: bold;
+}
+
+/** HEADER **/
+	.jumbotron h1 {
+		font-size: 1.8em;
+		font-weight: bold;
+		margin: 5px 0 0 130px;
+	}
+
+	header.jumbotron {
+		background: #bb5234;
+		color: black;
+		height: 150px;
+		padding: 20px;
+	}
+
+	#logo {
+		float: left;
+	}
+
+	.navbar-default {
+		margin-top: 50px;
+	}
+
+	.navbar-default,
+	.navbar-default .navbar-nav > .active > a {
+		background: none;
+		border: none;
+	}
+
+	.navbar-default .navbar-nav > li > a,
+	footer a {
+		font-weight: bold;
+		font-size: 1.2em;
+		color: #400;
+		opacity: 0.5;
+		-webkit-transition: opacity 0.2s ease-out;
+		-moz-transition: opacity 0.2s ease-out;
+		-ms-transition: opacity 0.2s ease-out;
+		-o-transition: opacity 0.2s ease-out;
+		transition: opacity 0.2s ease-out;
+	}
+
+	.navbar-default .navbar-nav > li > a,
+	.navbar-default .navbar-nav > .active > a,
+	#social ul li a {
+		padding:10px 15px;
+		border-left: 1px solid #400;
+	}
+
+	.navbar-default .navbar-nav > li:first-child > a {
+		border:none;
+	}
+
+	.navbar-default .navbar-nav > li > a:hover,
+	.navbar-default .navbar-nav > .active > a,
+	.navbar-default .navbar-nav > .active > a:hover,
+	footer a:hover {
+		color: #400;
+		opacity: 1;
+		background: none;
+	}
+
+/** PORTFOLIO **/
+	section {
+		margin: 60px 0;
+	}
+
+	.work {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-height: 200px;
+		width: 100%;
+		margin-bottom: 25px;
+    overflow: hidden;
+	}
+
+	.work img {
+ 		z-index: 1;
+		width: 100%;
+	}
+
+	.work .overlay {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top:0;bottom:0;left:0;right:0;
+		z-index: 2;
+		background: #f4bc43;
+		opacity:0;
+		-webkit-transition:opacity 0.2s ease-out;
+		-moz-transition:opacity 0.2s ease-out;
+		-ms-transition:opacity 0.2s ease-out;
+		-o-transition:opacity 0.2s ease-out;
+		transition:opacity 0.2s ease-out;
+	}
+
+	.work:hover .overlay {
+		opacity: 0.6;
+	}
+
+	.work .title {
+		top: -130px;
+		height: 30px;
+		font-size: 1.2em;
+		padding-top: 170px;
+		-webkit-transition:all 0.4s ease-out;
+		-moz-transition:all 0.4s ease-out;
+		-ms-transition:all 0.4s ease-out;
+		-o-transition:all 0.4s ease-out;
+		transition:all 0.4s ease-out;
+	}
+
+	.work:hover .title {
+		top:-100px;
+		opacity: 1;
+	}
+
+	.work .caption {
+		top: 150px;
+		height: 200px;
+		font-size: 1.01em;
+		-webkit-transition:all 0.55s ease-out;
+		-moz-transition:all 0.55s ease-out;
+		-ms-transition:all 0.55s ease-out;
+		-o-transition:all 0.55s ease-out;
+		transition:all 0.55s ease-out;
+	}
+
+	.work:hover .caption {
+		top:100px;
+		opacity: 1;
+	}
+
+	.work .title, .work .caption {
+		color: white;
+		display: block;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		z-index: 3;
+		text-shadow:	black 1px 0px 0px,
+						black 1px 1px 0px,
+						black 1px -1px 0px,
+						black -1px 1px 0px,
+						black -1px 0px 0px,
+						black -1px -1px 0px,
+						black 0px 1px 0px,
+						black 0px -1px 0px;
+		opacity: 0;
+	}
+
+  .work-img {
+    overflow: hidden;
+  }
+
+  .work-img img {
+    max-width: 90%;
+  }
+
+	a {
+		color: #bb5234;
+	}
+
+	a:hover {
+		color: #400;
+	}
+
+/** FORMULAIRE **
+	form {
+		text-align: center;
+	}
+
+	input, textarea {
+		margin-top: 25px;
+		background: white;
+		color:#444;
+		border:2px solid #555;
+		font-size: 1.3em;
+		-webkit-transition:border-color 0.2s ease-out;
+		-moz-transition:border-color 0.2s ease-out;
+		-ms-transition:border-color 0.2s ease-out;
+		-o-transition:border-color 0.2s ease-out;
+		transition:border-color 0.2s ease-out;
+	}
+
+	input:hover, textarea:hover {
+		border-color:#400;
+	}
+
+	input[name="name"], input[name="email"] {
+		width: 45.5%;
+		padding:5px 0 5px 15px;
+	}
+
+	input[name="name"] {
+		margin-right: 15px;
+	}
+
+	input[name="subject"] {
+		width: 96.1%;
+		padding:5px 0 5px 15px;
+	}
+
+	textarea {
+		margin-top: 5px;
+		width: 96.1%;
+		padding-left: 15px;
+		font-family: arial, verdana, sans-serif;
+	}
+
+	input[type="submit"] {
+		color: #400;
+		width:50%;
+		height:40px;
+		cursor: pointer;
+	}
+
+	legend, label {
+		display: none;
+	}
+
+	fieldset {
+		border:none;
+		margin-bottom: -20px;
+	}
+  **/
+
+/** CV **
+	ul.cv {
+		opacity: 0.9;
+		margin-left: 50px;
+	}
+
+	ul.cv li {
+		list-style-type: square;
+	}
+
+	#pdf:hover {
+		opacity: 1;
+	}
+
+
+	#pdf>a {
+		display: block;
+		color: black;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+	}
+  **/
+
+/** FOOTER **/
+	footer {
+		background: #bb5234;
+		height: 100px;
+		position: relative;
+		clear: both;
+		margin-top: -40px;
+	}
+
+	#copyright {
+		padding-top: 70px;
+		text-decoration: none;
+		float: left;
+		color: #400;
+		font-size: 0.85em;
+		font-weight: bold;
+	}
+
+	#copyright a:hover {
+		text-decoration: none;
+	}
+
+	#social ul {
+		text-align: right;
+	}
+
+	#social ul li {
+		display: inline;
+	}
+
+	#social ul li a {
+		font-size: 2.5em;
+		line-height: 100px;
+		border-left: none;
+	}

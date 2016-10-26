@@ -6,14 +6,13 @@
   <div class="row">
     {% for work in listWorks %}
       <div class="col-md-3 col-sm-6">
-        <a href="work/{{ work.slug}}">
-          <div class="work" style="position: relative; margin-bottom:25px;">
+        <a href="work/{{ work.slug}}" class="work">
             <img alt="" src="{{ asset((work.image.webPath) | imagine_filter('index_thumb')) }}">
-            <span class=""></span>
-            <span class=""></span>
-          </div>
+            <span class="title">{{ work.title }}</span>
+            <span class="caption">{{ work.category }}</span>
+            <div class="overlay"></div>
         </a>
       </div>
     {% endfor %}
   </div>
-  {% endblock %}
+{% endblock %}

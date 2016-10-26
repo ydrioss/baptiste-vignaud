@@ -4,32 +4,49 @@
     <meta charset="utf-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <title>Baptiste Vignaud - Développeur web - {% block title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="jumbotron">
-      <div class="container">
-					<a href="http://baptiste-vignaud.fr"><img alt="" src=""></a>
-						<h1>Baptiste Vignaud - Développeur web</h1>
+    <div id="wrap">
+      <header class="jumbotron">
+        <div class="container-fluid">
+  					<a href="http://baptiste-vignaud.fr"><img alt="" src="http://baptiste-vignaud.fr/images/design/logo.png" id="logo"></a>
+  						<h1>Baptiste Vignaud - Développeur web</h1>
 
-					<nav class="navbar navbar-default">
-            <div class="navbar-collapse collapse">
-  						<ul class="nav navbar-nav navbar-right">
-  							<li {% if 'yd_portfolio_' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('yd_portfolio_homepage') }}">Portfolio</a></li>
-  							<li {% if app.request.attributes.get('_route') == 'yd_core_cv' %}class="active"{% endif %}><a href="{{ path('yd_core_cv') }}">Curriculum Vitae</a></li>
-  							<li {% if app.request.attributes.get('_route') == 'yd_core_about' %}class="active"{% endif %}><a href="{{ path('yd_core_about') }}">À propos</a></li>
-                <li {% if app.request.attributes.get('_route') == 'yd_core_contact' %}class="active"{% endif %}><a href="{{ path('yd_core_contact') }}">Contact</a></li>
-  						</ul>
-            </div>
-					</nav>
-				</div>
-    </header>
+  					<nav class="navbar navbar-default">
+              <div class="navbar-collapse collapse">
+    						<ul class="nav navbar-nav navbar-right">
+    							<li {% if 'yd_portfolio_' in app.request.attributes.get('_route') %}class="active"{% endif %}><a href="{{ path('yd_portfolio_homepage') }}">Portfolio</a></li>
+    							<li {% if app.request.attributes.get('_route') == 'yd_core_cv' %}class="active"{% endif %}><a href="{{ path('yd_core_cv') }}">Curriculum Vitae</a></li>
+    							<li {% if app.request.attributes.get('_route') == 'yd_core_about' %}class="active"{% endif %}><a href="{{ path('yd_core_about') }}">À propos</a></li>
+                  <li {% if app.request.attributes.get('_route') == 'yd_core_contact' %}class="active"{% endif %}><a href="{{ path('yd_core_contact') }}">Contact</a></li>
+    						</ul>
+              </div>
+  					</nav>
+  				</div>
+      </header>
 
-    <div class="container-fluid">
-      {% block body %}
-      {% endblock %}
+      <section class="container-fluid">
+        {% block body %}
+        {% endblock %}
+      </section>
     </div>
+
+    <footer>
+			<div class="container-fluid">
+				<p id="copyright">© 2015-2016 <a href="mailto:baptiste.vignaud.tic@gmail.com">Baptiste Vignaud</a></p>
+
+				<div id="social">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://fr.linkedin.com/in/baptiste-vignaud-01906099"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://vimeo.com/user11092914"><i class="fa fa-vimeo"></i></a></li>
+						</ul>
+				</div>
+			</div>
+		</footer>
 
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
