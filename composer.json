@@ -1,6 +1,6 @@
 {
     "name": "batou/baptiste.vignaud.fr",
-    "license": "proprietary",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
