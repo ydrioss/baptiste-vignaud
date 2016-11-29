@@ -1,0 +1,45 @@
+footer {
+  background: @brand-primary;
+  height: @footer-height;
+  position: relative;
+  clear: both;
+  margin-top: -40px;
+}
+
+#copyright {
+		padding-top: 70px;
+		text-decoration: none;
+		float: left;
+		color: @dark-red;
+		font-size: 0.85em;
+		font-weight: bold;
+    a:hover {text-decoration: none;}
+}
+
+#social ul {
+  text-align: right;
+  li {
+    display: inline;
+    a {
+    		font-size: 2.5em;
+    		line-height: 100px;
+    		border-left: none;
+    }
+  }
+}
+
+/** STICKY PANTS **/
+html, body {
+  height: 100%;
+}
+
+body > #wrap {
+  height: auto;
+  min-height: 100%;
+  margin-bottom: -100px;
+  &:after {
+    content: "";
+    display: block;
+    height: 100px;
+  }
+}

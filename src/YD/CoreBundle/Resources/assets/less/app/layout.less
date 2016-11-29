@@ -1,0 +1,162 @@
+h1 {
+	padding: 25px 0 0 150px;
+	font-size: 1.5em;
+}
+
+h2 {
+	margin-bottom: 25px;
+}
+
+h3 {
+	margin:15px 0 0 15px;
+}
+
+h4 {
+  margin:5px 0 0 25px;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+.red {
+  color: @brand-primary;
+  font-weight: bold;
+}
+
+/** HEADER **/
+header.jumbotron {
+  background: @brand-primary;
+  color: black;
+  height: 150px;
+  padding: 20px;
+  h1 {
+
+  		font-size: 1.8em;
+  		font-weight: bold;
+  		margin: 5px 0 0 130px;
+  }
+  #logo {float: left;}
+  .navbar-default {
+    margin-top: 25px;
+    &, .navbar-nav > .active > a {
+      background: none;
+      border: none;
+    }
+  }
+}
+
+.navbar-default .navbar-nav > li > a,
+footer a {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: @dark-red;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-out;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > .active > a,
+#social ul li a {
+  padding:10px 15px;
+  border-left: 1px solid @dark-red;
+}
+
+.navbar-default .navbar-nav > li:first-child > a {
+  border:none;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+footer a:hover {
+  color: @dark-red;
+  opacity: 1;
+  background: none;
+}
+
+/** PORTFOLIO **/
+section {
+  margin: 60px 0;
+}
+
+.work {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 200px;
+  width: 100%;
+  margin-bottom: 25px;
+  overflow: hidden;
+  img {
+    z-index: 1;
+    width: 100%;
+  }
+  .overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;bottom:0;left:0;right:0;
+    z-index: 2;
+    background: @brand-secondary;
+    opacity:0;
+    transition:opacity 0.2s ease-out;
+  }
+  .title {
+    top: -130px;
+    height: 30px;
+    font-size: 1.2em;
+    padding-top: 170px;
+    transition:all 0.4s ease-out;
+  }
+  .caption {
+    top: 150px;
+    height: 200px;
+    font-size: 1.01em;
+    transition:all 0.55s ease-out;
+  }
+  .title, .caption {
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 3;
+    text-shadow:	black 1px 0px 0px,
+            black 1px 1px 0px,
+            black 1px -1px 0px,
+            black -1px 1px 0px,
+            black -1px 0px 0px,
+            black -1px -1px 0px,
+            black 0px 1px 0px,
+            black 0px -1px 0px;
+    opacity: 0;
+  }
+  &:hover {
+    .overlay {opacity: 0.6;}
+    .title {
+      top:-100px;
+      opacity: 1;
+    }
+    .caption {
+      top:100px;
+      opacity: 1;
+    }
+  }
+}
+
+.work-img {
+  overflow: hidden;
+  img {max-width: 90%;}
+}
+
+a {
+  color: @brand-primary;
+  &:hover {color:@dark-red;}
+}

@@ -1,0 +1,30 @@
+{
+  "name": "baptiste-vignaud.fr",
+  "version": "2.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ydrioss/baptiste-vignaud.git"
+  },
+  "author": "Baptiste Vignaud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ydrioss/baptiste-vignaud/issues"
+  },
+  "homepage": "https://github.com/ydrioss/baptiste-vignaud#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.0",
+    "gulp-sourcemaps": "^1.9.1"
+  }
+}
